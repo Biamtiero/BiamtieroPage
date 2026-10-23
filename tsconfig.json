@@ -19,6 +19,9 @@
   "include": [
     "src/main.tsx",
     "src/App.tsx",
+    "src/SegermanAboutSection.tsx",
+    "src/ContactSection.tsx",
+    "src/JesperWorksPage.tsx",
     "src/CurvedWorksCarousel3D.tsx",
     "src/StudioScene3D.tsx",
     "src/tactileAudio.ts",

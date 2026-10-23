@@ -5,11 +5,11 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
-  background-color: #0b0b0c;
+  background-color: #020412;
 }
 
 body {
-  background-color: #0b0b0c;
+  background-color: #020412;
   color: #f4f3ef;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
@@ -20,6 +20,187 @@ body {
   font-family: 'Instrument Serif', Georgia, serif;
 }
 
+/* ============================================================================
+   1. SEGERMAN.MP4 (ABOUT PAGE) ENTRANCE CHOREOGRAPHY
+============================================================================ */
+@keyframes segermanTitleReveal {
+  0% {
+    transform: translate3d(0, 115%, 0) rotate(2.5deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0%, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes segermanFadeUp {
+  0% {
+    transform: translate3d(0, 38px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.reveal-title-active {
+  animation: segermanTitleReveal 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-fade-active {
+  animation: segermanFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================================
+   2. HERO LANDING PAGE (BERANDA) CINEMA FRAME EXPAND CHOREOGRAPHY
+   (Inspired by Segerman's uBgOffset 0.8 -> 1.0 frame reveal)
+============================================================================ */
+@keyframes heroCinemaFrameExpand {
+  0% {
+    transform: scale(0.84);
+    border-radius: 32px;
+    filter: brightness(0.5) contrast(1.15);
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 0px;
+    filter: brightness(1) contrast(1);
+  }
+}
+
+@keyframes heroTopBarSlide {
+  0% {
+    transform: translate3d(0, -36px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroCenterUnfold {
+  0% {
+    transform: translate3d(0, 44px, 0) scale(0.94);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-frame-enter {
+  animation: heroCinemaFrameExpand 1.2s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+.hero-topbar-enter {
+  animation: heroTopBarSlide 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.hero-center-enter {
+  animation: heroCenterUnfold 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+/* ============================================================================
+   3. CONTACT PAGE HORIZON DAWN & 3D KINETIC HEADLINE CHOREOGRAPHY
+============================================================================ */
+@keyframes contactHorizonSurge {
+  0% {
+    transform: translate3d(0, 35%, 0) scaleY(0.35);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0%, 0) scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes contact3DHeadlineRoll {
+  0% {
+    transform: perspective(1000px) rotateX(68deg) translate3d(0, 110%, -60px);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) translate3d(0, 0%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes contactCapsuleExpand {
+  0% {
+    transform: scaleX(0.72) translate3d(0, 28px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.contact-horizon-active {
+  animation: contactHorizonSurge 1.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.contact-headline-3d-active {
+  transform-origin: 50% 100%;
+  animation: contact3DHeadlineRoll 1.15s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+.contact-capsule-active {
+  animation: contactCapsuleExpand 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+/* ============================================================================
+   4. JESPER LANDBERG & SEGERMAN AUTHENTIC PILL BUTTON INTERACTIONS
+   - Arrow shoots out top-right and re-enters from bottom-left on hover
+   - Smooth tactile press without cheesy neon borders
+============================================================================ */
+.jesper-arrow-box {
+  position: relative;
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.jesper-arrow-primary {
+  transition: transform 0.42s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.jesper-arrow-secondary {
+  position: absolute;
+  transform: translate3d(-125%, 125%, 0);
+  transition: transform 0.42s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.group:hover .jesper-arrow-primary {
+  transform: translate3d(125%, -125%, 0);
+}
+
+.group:hover .jesper-arrow-secondary {
+  transform: translate3d(0%, 0%, 0);
+}
+
+@keyframes archiveRowSlide {
+  0% {
+    opacity: 0;
+    transform: translate3d(-24px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.archive-row-enter {
+  animation: archiveRowSlide 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @layer components {
   .glass-pill {
     background: rgba(20, 20, 22, 0.45);
@@ -28,7 +209,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
-  /* High-Definition Photo Clarity Enhancement */
   .hd-hero-image {
     image-rendering: auto;
     filter: url(#hd-sharpen) contrast(1.05) saturate(1.04);
