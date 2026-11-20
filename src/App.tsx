@@ -207,12 +207,12 @@ export function App() {
               </div>
 
               {/* Name & Headline */}
-              <h1 className="mt-5 font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.06] text-white drop-shadow-lg">
+              <h1 className="mt-5 font-display text-[clamp(2.5rem,7vw,5rem)] font-bold tracking-[-0.035em] leading-[1.06] text-white drop-shadow-lg">
                 Biamtiero{' '}
                 <span className="font-light text-slate-200">Amiral Kalman</span>
               </h1>
 
-              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-200/90 drop-shadow">
+              <p className="type-prose mt-4 text-slate-200/90 drop-shadow">
                 Membangun aplikasi web modern dengan arsitektur yang tangguh,
                 performa cepat, dan pengalaman digital yang berkarakter.
               </p>
@@ -373,6 +373,7 @@ export function App() {
             revealKey={aboutRevealKey}
             onNavigateHome={(e) => triggerSectionTransition('beranda', e)}
             onOpenWorks={(e) => triggerWorksPageTransition(e)}
+            onNavigateContact={(e) => triggerSectionTransition('kontak', e)}
           />
 
           {/* ================================================================
